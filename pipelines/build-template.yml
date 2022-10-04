@@ -1,0 +1,54 @@
+parameters:
+- name: Name
+  type: string
+- name: Enabled
+  type: boolean
+  default: false
+- name: Project
+  type: string
+- name: PoolName
+  type: string
+
+stages:
+- stage: ${{ parameters.Name }}
+  displayName: '${{ parameters.Name }} Stage'
+  condition: and(not(failed()), eq('${{ parameters.Enabled }}', true))
+  pool: ${{parameters.PoolName}}
+  
+  jobs:  
+  - job: ${{ parameters.Name }}
+    displayName: '${{ parameters.Name }} Job'
+    variables:
+      buildConfiguration: 'Release'
+      buildId: "1$(Build.BuildId)"
+
+    steps:   
+    - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs:
+        command: build
+        projects: '**/${{ parameters.Project }}/*.csproj'
+        arguments: '--configuration $(buildConfiguration)'
+      
+    - task: DotNetCoreCLI@2
+      displayName: UnitTests
+      inputs:
+        command: test
+        projects: '**/${{ parameters.Project }}Tests/*.csproj'
+        arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'    
+
+
+    - task: DotNetCoreCLI@2
+      displayName: Publish build application to folder
+      inputs:
+        command: publish
+        publishWebProjects: False
+        projects: '**/${{ parameters.Project }}/*.csproj'
+        arguments: '--output $(Build.ArtifactStagingDirectory)'
+        zipAfterPublish: True
+
+    - task: PublishBuildArtifacts@1
+      displayName: Publish build artifact to Azure Pipelines
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+        artifactName: 'drop'
