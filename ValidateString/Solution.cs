@@ -25,8 +25,17 @@ namespace ValidateString
 		/// <param name="toValidate"></param>
 		public static bool ValidateString(String toValidate)
 		{
-			//implement here your solution
-			return false;
-		}		
-	}
+            throw new NotImplementedException();
+        }
+
+        private static bool IsOpeningBracket(char c)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static bool MatchBracket(char openBracket, char closedBracket)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
