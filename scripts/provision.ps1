@@ -6,7 +6,7 @@ $storageAccountName = -join($prefix, "sa")
 $servicePlanName = -join($prefix, "plan")
 $functionAppName = -join($prefix, "app")
 $vmName = -join($prefix, "vm")
-$vmImage = "MicrosoftVisualStudio:visualstudio2019latest:vs-2019-ent-latest-ws2019:2022.07.15"
+$vmImage = "MicrosoftVisualStudio:visualstudio2022:vs-2022-comm-latest-ws2022:2022.09.21"
 
 
 $subscriptions = az login
@@ -44,4 +44,5 @@ $vm = az vm create `
     --public-ip-sku Standard `
     --nsg-rule RDP `
     --authentication-type password `
-    --admin-username pgcandidate
+    --admin-username pgcandidate `
+    --size Standard_DS4_v2
