@@ -4,10 +4,10 @@ using System.Text;
 
 namespace FIFOQueue
 {
-    public interface IQueue<T>
+    public interface IQueue
     {
-        public Boolean add(T element);
+        public Boolean add(int element);
 
-        public T poll();
+        public int poll();
     }
 }
