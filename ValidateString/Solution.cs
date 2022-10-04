@@ -27,15 +27,5 @@ namespace ValidateString
 		{
             throw new NotImplementedException();
         }
-
-        private static bool IsOpeningBracket(char c)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static bool MatchBracket(char openBracket, char closedBracket)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
