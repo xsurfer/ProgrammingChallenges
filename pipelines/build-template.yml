@@ -6,14 +6,14 @@ parameters:
   default: false
 - name: Project
   type: string
-- name: PoolName
-  type: string
+#- name: PoolName
+#  type: string
 
 stages:
 - stage: ${{ parameters.Name }}
   displayName: '${{ parameters.Name }} Stage'
   condition: and(not(failed()), eq('${{ parameters.Enabled }}', true))
-  pool: ${{parameters.PoolName}}
+#  pool: ${{parameters.PoolName}}
   
   jobs:  
   - job: ${{ parameters.Name }}
@@ -34,7 +34,7 @@ stages:
       displayName: UnitTests
       inputs:
         command: test
-        projects: '**/${{ parameters.Project }}Tests/*.csproj'
+        projects: '**/${{ parameters.Project }}Test/*.csproj'
         arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'    
 
 
