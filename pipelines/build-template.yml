@@ -34,7 +34,7 @@ stages:
       displayName: UnitTests
       inputs:
         command: test
-        projects: '**/${{ parameters.Project }}Tests/*.csproj'
+        projects: '**/${{ parameters.Project }}Test/*.csproj'
         arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'    
 
 
