@@ -1,0 +1,15 @@
+
+trigger:
+  branches: 
+    include:    
+    - master
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- template: build-template.yml
+  parameters:
+    Name: Build
+    Enabled: True
+    Project: 'ValidateString'
