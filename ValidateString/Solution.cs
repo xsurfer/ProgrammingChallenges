@@ -25,6 +25,7 @@ namespace ValidateString
 		/// <param name="toValidate"></param>
 		public static bool ValidateString(String toValidate)
 		{
+
             Stack<char> stack = new Stack<char>();
 
             foreach (char c in toValidate)
