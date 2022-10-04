@@ -1,14 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32407.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidateString", "ValidateString\ValidateString.csproj", "{93F2BEFA-7055-428E-B88C-BF6F7EA2C137}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateStringTest", "ValidateStringTest\ValidateStringTest.csproj", "{5C5A2F76-63A8-4D98-AA8B-9CD0EF68A1CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidateStringTest", "ValidateStringTest\ValidateStringTest.csproj", "{5C5A2F76-63A8-4D98-AA8B-9CD0EF68A1CA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{93F2BEFA-7055-428E-B88C-BF6F7EA2C137} = {93F2BEFA-7055-428E-B88C-BF6F7EA2C137}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFOQueue", "FIFOQueue\FIFOQueue.csproj", "{62304113-3956-4A4C-B6EE-F0ABC4F4432B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFOQueueTest", "FIFOQueueTest\FIFOQueueTest.csproj", "{6F2ED5CE-DE8B-454C-ADC8-01CD10F8B122}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +28,14 @@ Global
 		{5C5A2F76-63A8-4D98-AA8B-9CD0EF68A1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C5A2F76-63A8-4D98-AA8B-9CD0EF68A1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C5A2F76-63A8-4D98-AA8B-9CD0EF68A1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62304113-3956-4A4C-B6EE-F0ABC4F4432B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62304113-3956-4A4C-B6EE-F0ABC4F4432B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62304113-3956-4A4C-B6EE-F0ABC4F4432B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62304113-3956-4A4C-B6EE-F0ABC4F4432B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F2ED5CE-DE8B-454C-ADC8-01CD10F8B122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2ED5CE-DE8B-454C-ADC8-01CD10F8B122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2ED5CE-DE8B-454C-ADC8-01CD10F8B122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2ED5CE-DE8B-454C-ADC8-01CD10F8B122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
